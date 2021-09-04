@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.projectmanagementapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="WORKSPACE"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TrelloClone">
+        <activity android:name="com.example.projectmanagementapp.utils.Constants"></activity>
+        <activity android:name="com.example.projectmanagementapp.models.User" />
+        <activity android:name="com.example.projectmanagementapp.models.Task" />
+        <activity android:name="com.example.projectmanagementapp.models.SelectedMembers" />
+        <activity android:name="com.example.projectmanagementapp.models.Card" />
+        <activity android:name="com.example.projectmanagementapp.models.Board" />
+        <activity android:name="com.example.projectmanagementapp.firebase.FirestoreClass" />
+        <activity android:name="com.example.projectmanagementapp.fcm.MyFireBaseMessagingService" />
+        <activity android:name="com.example.projectmanagementapp.dialogs.MembersListDialog" />
+        <activity android:name="com.example.projectmanagementapp.dialogs.LabelColorListDialog" />
+        <activity android:name="com.example.projectmanagementapp.adapters.TaskListItemsAdapter" />
+        <activity android:name="com.example.projectmanagementapp.adapters.MemberListItemsAdapter" />
+        <activity android:name="com.example.projectmanagementapp.adapters.LabelColorListItemsAdapter" />
+        <activity android:name="com.example.projectmanagementapp.adapters.CardMemberListItemsAdapter" />
+        <activity android:name="com.example.projectmanagementapp.adapters.CardListItemsAdapter" />
+        <activity android:name="com.example.projectmanagementapp.adapters.BoardItemsAdapter" />
+        <activity android:name="com.example.projectmanagementapp.adapters.BoardItemsAdpater" />
+        <activity
+            android:name="com.example.projectmanagementapp.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.example.projectmanagementapp.activities.TaskListActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.SplashActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.SignUpActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.SignInActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.MyProfileActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.MembersActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.IntroActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.CreateBoardActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.CardDetailsActivity" />
+        <activity android:name="com.example.projectmanagementapp.activities.BaseActivity" />
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+ See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_static_notification" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <activity
+            android:name=".activities.CardDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.example.projectmanagementapp.activities.MembersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activities.TaskListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".activities.CreateBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activities.MyProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".activities.BaseActivity" />
+        <activity
+            android:name=".activities.SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activities.IntroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".fcm.MyFireBaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
